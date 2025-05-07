@@ -1,0 +1,13 @@
+
+/* macht man immer, wichtig, weil Webiste auf jedem Broweser imme rgleich aussieht */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* das hier machen, um zu testen, dass alles richtig verlinkt ist */
+body{
+    background-color: yellow;
+}
