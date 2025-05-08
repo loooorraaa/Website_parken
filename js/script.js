@@ -60,9 +60,9 @@ const map = L.map('map').setView([47.5596, 7.5886], 14); // Koordinaten von Base
 //                                Breite    Länge   Zoomstufe (1=Fern, 18=Sehr nah)
 
 // Schritt 2: Kartenhintergrund laden (OpenStreetMap)
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; OpenStreetMap contributors',
-    maxZoom: 18,
+const humanitarianTileLayer = L.tileLayer('https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="https://hot.openstreetmap.org/">Humanitarian OpenStreetMap Team</a>',
+    maxZoom: 19
 }).addTo(map);
 
 // Schritt 3: Marker für jedes Parkhaus hinzufügen
