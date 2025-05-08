@@ -11,3 +11,8 @@
 body{
     background-color: rgba(164, 215, 224, 1);
 }
+
+.leaflet-popup-content-wrapper{
+    background-color: yellow !important;
+
+}
