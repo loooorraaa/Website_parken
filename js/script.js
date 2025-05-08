@@ -16,12 +16,13 @@ const parkhaeuser_loaded = await loadData();
  // gibt die Daten der API oder false in der Konsole aus
 // console.log(parkhaeuser_loaded); // gibt die Daten der API oder false in der Konsole aus
 
+
 let all_parkhaeuser = [];
 parkhaeuser_loaded.results.forEach(parkhaus => {
     all_parkhaeuser.push({
         name: parkhaus.title,
         status: parkhaus.status,
-        adresse: parkhaus.adress,
+        adresse: parkhaus.address,
         freie_plaetze: parkhaus.free,
         gesamte_plaetze: parkhaus.total,
         auslastung: parkhaus.auslastung_prozent,
@@ -46,3 +47,4 @@ all_parkhaeuser.forEach(parkhaus => {
     </div>`;
     parkhaeuser_container.innerHTML += html;
 });
+
