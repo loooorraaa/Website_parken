@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <title>hier_kannst_du_parken</title>
 </head>
 <body>
@@ -11,9 +12,12 @@
   <h1> Hier kannst du parken</h1> 
   <h2>Basel Edition</h2> 
   <div id="parkhaeuser"></div> 
+  <div id="map" style="height: 500px;"></div>
+
   </section>
 
 
-  <script type="module" src="js/script.js"></script> 
+  <script type="module" src="js/script.js"></script>
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script> 
 </body>
 </html>

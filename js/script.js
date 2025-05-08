@@ -26,7 +26,8 @@ parkhaeuser_loaded.results.forEach(parkhaus => {
         freie_plaetze: parkhaus.free,
         gesamte_plaetze: parkhaus.total,
         auslastung: parkhaus.auslastung_prozent,
-        
+        laenge: parkhaus.geo_point_2d.lon,
+        breite: parkhaus.geo_point_2d.lat
     });
 
 });
@@ -38,13 +39,29 @@ console.log(all_parkhaeuser); // gibt die Daten der API oder false in der Konsol
 const parkhaeuser_container = document.querySelector('#parkhaeuser');
 all_parkhaeuser.forEach(parkhaus => {
     const html = `<div class="parkhaus">
-        <h2 class="parkhaus_name">${parkhaus.name}</h2>
-        <p class="parkhaus_adresse">Adresse: ${parkhaus.adresse}</p>
-        <p class="parkhaus_status">Status: ${parkhaus.status}</p>
-        <p class="freie_plaetze">Freie Plätze: ${parkhaus.freie_plaetze}</p>
-        <p class="gesamte_plaetze">Gesamte Plätze: ${parkhaus.gesamte_plaetze}</p>
-        <p class="auslastung">Auslastung: ${parkhaus.auslastung}%</p>
-    </div>`;
+    <h2 class="parkhaus_name">${parkhaus.name}</h2>
+    <p class="parkhaus_adresse">Adresse: ${parkhaus.adresse}</p>
+    <p class="parkhaus_status">Status: ${parkhaus.status}</p>
+    <p class="freie_plaetze">Freie Plätze: ${parkhaus.freie_plaetze}</p>
+    <p class="gesamte_plaetze">Gesamte Plätze: ${parkhaus.gesamte_plaetze}</p>
+    <p class="auslastung">Auslastung: ${parkhaus.auslastung}%</p>
+    <p class="koordinaten">Koordinaten: ${parkhaus.breite}, ${parkhaus.laenge}</p>
+</div>`;
+
     parkhaeuser_container.innerHTML += html;
 });
+
+
+// Karte initialisieren:
+
+// Schritt 1: Karte erstellen und im <div id="map"> anzeigen
+const map = L.map('map').setView([47.5596, 7.5886], 14); // Koordinaten von Basel
+//                    ↑         ↑       ↑
+//                  Breite    Länge   Zoomstufe (1=Fern, 18=Sehr nah)
+
+// Schritt 2: Kartenhintergrund laden (OpenStreetMap)
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; OpenStreetMap contributors',
+    maxZoom: 18,
+}).addTo(map);
 
