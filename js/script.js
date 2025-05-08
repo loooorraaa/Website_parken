@@ -160,11 +160,11 @@ all_parkhaeuser.forEach(parkhaus => {
             .addTo(map)
             .bindPopup(`
                 <h2>${parkhaus.name}</h2>
-                <p class="status">Status: ${parkhaus.status}</p>
-                <p class="adresse">Adresse: ${parkhaus.adresse}</p>
-                <p class="freiePlaetze">Freie Plätze: ${parkhaus.freie_plaetze}</p>
-                <p class="gesamtePlaetze">Gesamte Plätze: ${parkhaus.gesamte_plaetze}</p>
-                <p class="auslastung">Auslastung: ${parkhaus.auslastung}%</p>`);
+                <p class="status">${parkhaus.status}</p>
+                <p class="adresse">${parkhaus.adresse}</p>
+                <p class="freiePlaetze">${parkhaus.freie_plaetze} freie Plätze von</p>
+                <p class="gesamtePlaetze">${parkhaus.gesamte_plaetze}</p>
+                <p class="auslastung">${parkhaus.auslastung}%</p> Auslastung`);
 
                 
         // Schritt 6: Klick-Event für den Marker, um das Icon zu wechseln

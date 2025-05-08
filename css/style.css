@@ -12,19 +12,73 @@ body{
     background-color: rgba(144, 204, 203, 1);
 }
 
-/* Hintergrund für die Infos (grün) */
+
+
+/* Hintergrund für die Infos (grün) und grösse der Box*/
 .leaflet-popup-content-wrapper{
     background-color: rgba(208, 219, 174, 1) !important;
 
 }
-
-
 .leaflet-popup-tip {
 	background: rgba(208, 219, 174, 1) !important;
-	}
 
-/* Hintergrund für die Infos (rot)
+}
 .leaflet-popup-content-wrapper{
-    background-color: rgba(209, 146, 141, 1) !important;
+    width: 230px;
+    height: 230px;
+    padding: 10px;
+    border-radius: 10px;
+   
+}
 
-} */
+
+/* Grösse der Map */
+
+#map{
+    width: 100%;
+    height: 100vh;
+    margin: 90px auto 0 auto; /* 50px Abstand nach oben */
+    position: relative;
+    z-index: 1;
+}
+
+
+
+
+
+
+
+
+
+/* Informationen in Box stylen */
+
+.h2{
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0;
+}
+.status{
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 0.25rem 0;
+}
+
+.adress{
+ 
+}
+
+.freie_plaetze{
+   
+}
+
+.gesamte_plaetze{
+    
+}
+
+.gesamte_plaetze{
+
+}
+
+.auslastung{
+    
+}
