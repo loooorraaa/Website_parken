@@ -9,10 +9,22 @@
 
 /* das hier machen, um zu testen, dass alles richtig verlinkt ist */
 body{
-    background-color: rgba(164, 215, 224, 1);
+    background-color: rgba(144, 204, 203, 1);
 }
 
+/* Hintergrund für die Infos (grün) */
 .leaflet-popup-content-wrapper{
-    background-color: yellow !important;
+    background-color: rgba(208, 219, 174, 1) !important;
 
 }
+
+
+.leaflet-popup-tip {
+	background: rgba(208, 219, 174, 1) !important;
+	}
+
+/* Hintergrund für die Infos (rot)
+.leaflet-popup-content-wrapper{
+    background-color: rgba(209, 146, 141, 1) !important;
+
+} */

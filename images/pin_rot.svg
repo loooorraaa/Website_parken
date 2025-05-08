@@ -4,10 +4,12 @@
   <defs>
     <style>
       .st0 {
-        fill: #a85151;
+        fill: #c67571;
+        stroke: #c9827f;
+        stroke-miterlimit: 10;
       }
     </style>
   </defs>
-  <circle class="st0" cx="367.5" cy="332.73" r="319.5"/>
   <rect class="st0" x="327.12" y="325.39" width="80.77" height="765.66"/>
+  <circle class="st0" cx="367.5" cy="332.73" r="319.5"/>
 </svg>
