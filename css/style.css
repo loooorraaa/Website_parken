@@ -33,7 +33,6 @@ body{
 
 
 /* Grösse der Map */
-
 #map{
     width: 100%;
     height: 100vh;
@@ -42,11 +41,22 @@ body{
     z-index: 1;
 }
 
+/* Titel udn Untertitel stylen */
+.titel{
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    margin: 0;
+    padding: 20px 0;
+}
 
-
-
-
-
+.untertitel{
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    margin: 0;
+    padding: 10px 0;
+}
 
 
 
