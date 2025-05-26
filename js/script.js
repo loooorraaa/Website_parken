@@ -164,7 +164,8 @@ all_parkhaeuser.forEach(parkhaus => {
                 <p class="adresse">${parkhaus.adresse}</p>
                 <p class="freiePlaetze">${parkhaus.freie_plaetze} freie Plätze von</p>
                 <p class="gesamtePlaetze">${parkhaus.gesamte_plaetze}</p>
-                <p class="auslastung">${parkhaus.auslastung}%</p> Auslastung`);
+                <p class="auslastung">${parkhaus.auslastung}% Auslastung</p>
+    `); 
 
                 
         // Schritt 6: Klick-Event für den Marker, um das Icon zu wechseln
@@ -366,34 +367,6 @@ L.geoJSON(route, {
 
 
 // Autiocon auf Pfad setzten:
-
-
-
-// // 1. Auto-Icon laden
-// const autoIcon = L.icon({
-//     iconUrl: 'images/icon_auto_gelb.svg',
-//     iconSize: [40, 40],
-//     iconAnchor: [20, 20],
-// });
-
-// // 2. Route-Koordinaten extrahieren (GeoJSON -> Koordinaten in [lat, lon])
-// const routeCoords = route.features[0].geometry.coordinates.map(coord => [coord[1], coord[0]]);
-
-// // 3. Marker mit Auto-Icon auf Startpunkt setzen
-// let autoMarker = L.marker(routeCoords[0], { icon: autoIcon }).addTo(map);
-
-// // 4. Bewegung in Endlosschleife
-// let currentIndex = 0;
-// function moveMarker() {
-//     autoMarker.setLatLng(routeCoords[currentIndex]);
-//     currentIndex = (currentIndex + 1) % routeCoords.length; // Loop zurück zum Start
-//     setTimeout(moveMarker, 100); // Bewegung alle 100ms
-// }
-
-// // 5. Bewegung starten
-// setTimeout(moveMarker, 10000);
-
-
 
 // Autobewergungen sind smoother:
 

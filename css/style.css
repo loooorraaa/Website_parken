@@ -29,8 +29,11 @@ body{
     height: 230px;
     padding: 10px;
     border-radius: 10px;
+    line-height: 1.2;
    
 }
+
+
 
 
 /* Grösse der Map */
@@ -44,19 +47,22 @@ body{
 
 /* Titel udn Untertitel stylen */
 .titel{
-    font-size: 2rem;
+    font-size: 3.3rem;
     font-weight: bold;
     text-align: center;
     margin: 0;
     padding: 20px 0;
+    color: rgba(102, 97, 97, 1);
+    margin-top: 50px
 }
 
 .untertitel{
-    font-size: 1.2rem;
+    font-size: 1.8rem;
     font-weight: bold;
     text-align: center;
     margin: 0;
     padding: 10px 0;
+    color: rgba(102, 97, 97, 1);
 }
 
 
@@ -65,35 +71,50 @@ body{
 
 h2{
     font-family: 'Bebas Neue', Impact, 'Arial Narrow', sans-serif;
-    font-size: 1.5rem;
+    font-size: 20px;
     font-weight: bold;
     margin: 0;
+    text-align: center;
 }
 .status{
     font-family: 'Bebas Neue', Impact, 'Arial Narrow', sans-serif;
-    font-size: 1rem;
+    font-size: 15px;
     font-weight: bold;
-    margin: 0.25rem 0;
+    margin:0;
+    text-align: center;
+    line-height: 1.2;
+    margin-top: -70px;
+  
 }
+
 
 .adresse{
  font-family: 'Bebas Neue', Impact, 'Arial Narrow', sans-serif;
+ text-align: center;
+ margin: 0;
+ font-size: 12px;
 }
 
 .freiePlaetze{
- font-family: 'Bebas Neue', Impact, 'Arial Narrow', sans-serif;  
+ font-family: 'Bebas Neue', Impact, 'Arial Narrow', sans-serif; 
+ margin:0; 
 }
 
 .gesamtePlaetze{
   font-family: 'Bebas Neue', Impact, 'Arial Narrow', sans-serif;  
+  margin: 0;
 }
 
 .gesamte_plaetze{
 font-family: 'Bebas Neue', Impact, 'Arial Narrow', sans-serif;
+text-align: right;
+margin:0; 
 }
 
 .auslastung {
-  font-family: 'Bebas Neue', Impact, 'Arial Narrow', sans-serif;
+  font-family: 'Bebas Neue', Impact, 'Arial Narrow', sans-serif !important;
+  text-align: right !important;
+  margin: 0;
 }
 
 
