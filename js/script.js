@@ -417,7 +417,7 @@ let autoMarker = L.marker(routeCoords[0], {
 let currentIndex = 0;
 let nextIndex = 1;
 let t = 0;
-const speed = 0.0010; // Geschwindigkeit
+const speed = 0.0095; // Geschwindigkeit
 
 function interpolatePosition(start, end, t) {
     return [
