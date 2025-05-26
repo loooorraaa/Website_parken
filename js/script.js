@@ -399,18 +399,25 @@ L.geoJSON(route, {
 
 const autoIcon = L.icon({
     iconUrl: 'images/icon_auto_gelb.svg',
-    iconSize: [40, 40],
-    iconAnchor: [20, 20],
+    iconSize: [30, 30],
+    iconAnchor: [15, 15],
 });
+
+
 
 const routeCoords = route.features[0].geometry.coordinates.map(coord => [coord[1], coord[0]]);
 
-let autoMarker = L.marker(routeCoords[0], { icon: autoIcon }).addTo(map);
+let autoMarker = L.marker(routeCoords[0], {
+    icon: autoIcon,
+    rotationAngle: 0,
+    rotationOrigin: 'center center'
+}).addTo(map);
+
 
 let currentIndex = 0;
 let nextIndex = 1;
 let t = 0;
-const speed = 0.02; // Geschwindigkeit
+const speed = 0.0010; // Geschwindigkeit
 
 function interpolatePosition(start, end, t) {
     return [
@@ -443,6 +450,47 @@ function animate() {
 }
 
 requestAnimationFrame(animate);
+
+
+
+// Auto während fahren drehen: 
+function updateAutoRotation() {
+    if (currentIndex < routeCoords.length - 1) {
+        const start = routeCoords[currentIndex];
+        const end = routeCoords[nextIndex];
+
+        const dx = end[1] - start[1]; // lng
+        const dy = end[0] - start[0]; // lat
+        const angle = Math.atan2(dy, dx) * (180 / Math.PI);
+
+        autoMarker.setRotationAngle(angle);
+    }
+}
+function animateWithRotation() {
+    const start = routeCoords[currentIndex];
+    const end = routeCoords[nextIndex];
+
+    t += speed;
+
+    if (t >= 1) {
+        t = 0;
+        currentIndex = nextIndex;
+        nextIndex++;
+        if (nextIndex >= routeCoords.length) {
+            nextIndex = 0;
+            currentIndex = 0;
+        }
+    }
+
+    const pos = interpolatePosition(start, end, t);
+    autoMarker.setLatLng(pos);
+    
+    updateAutoRotation(); // Auto-Rotation aktualisieren
+
+    requestAnimationFrame(animateWithRotation);
+}
+requestAnimationFrame(animateWithRotation);
+
 
 
 
