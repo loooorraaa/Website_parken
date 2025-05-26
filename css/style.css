@@ -10,6 +10,7 @@
 /* das hier machen, um zu testen, dass alles richtig verlinkt ist */
 body{
     background-color: rgba(144, 204, 203, 1);
+    font-family: 'Bebas Neue', Impact, 'Arial Narrow', sans-serif;
 }
 
 
@@ -62,33 +63,35 @@ body{
 
 /* Informationen in Box stylen */
 
-.h2{
+h2{
+    font-family: 'Bebas Neue', Impact, 'Arial Narrow', sans-serif;
     font-size: 1.5rem;
     font-weight: bold;
     margin: 0;
 }
 .status{
+    font-family: 'Bebas Neue', Impact, 'Arial Narrow', sans-serif;
     font-size: 1rem;
     font-weight: bold;
     margin: 0.25rem 0;
 }
 
-.adress{
- 
+.adresse{
+ font-family: 'Bebas Neue', Impact, 'Arial Narrow', sans-serif;
 }
 
-.freie_plaetze{
-   
+.freiePlaetze{
+ font-family: 'Bebas Neue', Impact, 'Arial Narrow', sans-serif;  
+}
+
+.gesamtePlaetze{
+  font-family: 'Bebas Neue', Impact, 'Arial Narrow', sans-serif;  
 }
 
 .gesamte_plaetze{
-    
+font-family: 'Bebas Neue', Impact, 'Arial Narrow', sans-serif;
 }
 
-.gesamte_plaetze{
-
-}
-
-.auslastung{
-    
+.auslastung {
+  font-family: 'Bebas Neue', Impact, 'Arial Narrow', sans-serif;
 }

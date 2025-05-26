@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Ebene_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 735 1102">
+  <!-- Generator: Adobe Illustrator 29.5.0, SVG Export Plug-In . SVG Version: 2.1.0 Build 137)  -->
+  <defs>
+    <style>
+      .st0 {
+        fill: #90cccb;
+      }
+
+      .st1 {
+        fill: #699e9a;
+      }
+
+      .st2 {
+        fill: #7db7b4;
+      }
+
+      .st3 {
+        fill: #b6dbd9;
+        opacity: .7;
+      }
+    </style>
+  </defs>
+  <circle class="st3" cx="367.5" cy="551" r="352.8"/>
+  <circle class="st0" cx="367.5" cy="551" r="227.93"/>
+  <ellipse class="st2" cx="367.42" cy="551" rx="198.48" ry="190.41"/>
+  <ellipse class="st1" cx="367.5" cy="551" rx="175" ry="167.89"/>
+</svg>
