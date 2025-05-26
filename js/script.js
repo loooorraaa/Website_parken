@@ -363,3 +363,87 @@ L.geoJSON(route, {
     weight: 1.3,
   }
 }).addTo(map);
+
+
+// Autiocon auf Pfad setzten:
+
+
+
+// // 1. Auto-Icon laden
+// const autoIcon = L.icon({
+//     iconUrl: 'images/icon_auto_gelb.svg',
+//     iconSize: [40, 40],
+//     iconAnchor: [20, 20],
+// });
+
+// // 2. Route-Koordinaten extrahieren (GeoJSON -> Koordinaten in [lat, lon])
+// const routeCoords = route.features[0].geometry.coordinates.map(coord => [coord[1], coord[0]]);
+
+// // 3. Marker mit Auto-Icon auf Startpunkt setzen
+// let autoMarker = L.marker(routeCoords[0], { icon: autoIcon }).addTo(map);
+
+// // 4. Bewegung in Endlosschleife
+// let currentIndex = 0;
+// function moveMarker() {
+//     autoMarker.setLatLng(routeCoords[currentIndex]);
+//     currentIndex = (currentIndex + 1) % routeCoords.length; // Loop zurück zum Start
+//     setTimeout(moveMarker, 100); // Bewegung alle 100ms
+// }
+
+// // 5. Bewegung starten
+// setTimeout(moveMarker, 10000);
+
+
+
+// Autobewergungen sind smoother:
+
+const autoIcon = L.icon({
+    iconUrl: 'images/icon_auto_gelb.svg',
+    iconSize: [40, 40],
+    iconAnchor: [20, 20],
+});
+
+const routeCoords = route.features[0].geometry.coordinates.map(coord => [coord[1], coord[0]]);
+
+let autoMarker = L.marker(routeCoords[0], { icon: autoIcon }).addTo(map);
+
+let currentIndex = 0;
+let nextIndex = 1;
+let t = 0;
+const speed = 0.02; // Geschwindigkeit
+
+function interpolatePosition(start, end, t) {
+    return [
+        start[0] + (end[0] - start[0]) * t,
+        start[1] + (end[1] - start[1]) * t,
+    ];
+}
+
+function animate() {
+    const start = routeCoords[currentIndex];
+    const end = routeCoords[nextIndex];
+
+    t += speed;
+
+    if (t >= 1) {
+        // zum nächsten Segment wechseln
+        t = 0;
+        currentIndex = nextIndex;
+        nextIndex++;
+        if (nextIndex >= routeCoords.length) {
+            nextIndex = 0;  // Route von vorne starten
+            currentIndex = 0;
+        }
+    }
+
+    const pos = interpolatePosition(start, end, t);
+    autoMarker.setLatLng(pos);
+
+    requestAnimationFrame(animate);
+}
+
+requestAnimationFrame(animate);
+
+
+
+
