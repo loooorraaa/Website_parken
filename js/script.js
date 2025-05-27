@@ -35,22 +35,6 @@ console.log(all_parkhaeuser); // gibt die Daten der API oder false in der Konsol
 
 
 
-// unsere Parkhaeuser ins HTML/DOM einfüllen
-// const parkhaeuser_container = document.querySelector('#parkhaeuser');
-// all_parkhaeuser.forEach(parkhaus => {
-//     const html = `<div class="parkhaus">
-//     <h2 class="parkhaus_name">${parkhaus.name}</h2>
-//     <p class="parkhaus_adresse">Adresse: ${parkhaus.adresse}</p>
-//     <p class="parkhaus_status">Status: ${parkhaus.status}</p>
-//     <p class="freie_plaetze">Freie Plätze: ${parkhaus.freie_plaetze}</p>
-//     <p class="gesamte_plaetze">Gesamte Plätze: ${parkhaus.gesamte_plaetze}</p>
-//     <p class="auslastung">Auslastung: ${parkhaus.auslastung}%</p>
-//     <p class="koordinaten">Koordinaten: ${parkhaus.breite}, ${parkhaus.laenge}</p>
-// </div>`;
-
-//     parkhaeuser_container.innerHTML += html;
-// });
-
 
 // Karte initialisieren:
 
@@ -66,23 +50,6 @@ const humanitarianTileLayer = L.tileLayer('https://{s}.tile.openstreetmap.fr/hot
 }).addTo(map);
 
 
-// // Schritt 3: Marker für jedes Parkhaus hinzufügen
-// all_parkhaeuser.forEach(parkhaus => {
-//     // Überprüfen, ob sowohl lat als auch lon vorhanden sind
-//     console.log('Parkhaus Koordinaten: ', parkhaus.breite, parkhaus.laenge);
-//     if (parkhaus.breite && parkhaus.laenge) {
-//         L.marker([parkhaus.breite, parkhaus.laenge])  // [lat, lon]
-//             .addTo(map)
-//             .bindPopup(`
-//                 <h2>${parkhaus.name}</h2>
-//                 <p class="adresse">Adresse: ${parkhaus.adresse}</p>
-//                 <p class="freiePlaetze"> Freie Plätze: ${parkhaus.freie_plaetze}</P>
-//                 <p class="gesamtePlaetze"> Gesamte Plätze: ${parkhaus.gesamte_plaetze}</p>
-//                 <p class="auslastung"> Auslastung: ${parkhaus.auslastung}%</p>`);
-//     } else {
-//         console.log('Fehlende Koordinaten für Parkhaus: ', parkhaus.name);
-//     }
-// })
 
 
 // // Standartmarker mit meinen eigenen Markern ersetzten: 
@@ -95,31 +62,7 @@ const meinPinIcon = L.divIcon({
     popupAnchor: [0, -40] // Position des Popups
 });
 
-// Marker für jedes Parkhaus hinzufügen
-// all_parkhaeuser.forEach(parkhaus => {
-//     if (parkhaus.breite && parkhaus.laenge) {
-//         L.marker([parkhaus.breite, parkhaus.laenge], {icon: meinPinIcon})  // Setze das benutzerdefinierte Icon
-//             .addTo(map)
-//             .bindPopup(`
-//                 <h2>${parkhaus.name}</h2>
-//                 <p class="adresse">Adresse: ${parkhaus.adresse}</p>
-//                 <p class="freiePlaetze"> Freie Plätze: ${parkhaus.freie_plaetze}</P>
-//                 <p class="gesamtePlaetze"> Gesamte Plätze: ${parkhaus.gesamte_plaetze}</p>
-//                 <p class="auslastung"> Auslastung: ${parkhaus.auslastung}%</p>`);  
-            
-//     }
-// });
 
-
-// Marker für geöffnet und geschlossen
-// Marker neutral
-// const defaultIcon = L.divIcon({
-//     className: 'custom-icon',
-//     html: `<img src="images/pin_grau.svg" width="30" height="40" />`, // Graues SVG für Standard
-//     iconSize: [30, 40], // Größe des Icons
-//     iconAnchor: [15, 40], // Der Punkt des Markers (Mitte des Icons)
-//     popupAnchor: [0, -40] // Popup erscheint darüber
-// });
 
 // Marker geöffnet
 const openIcon = L.divIcon({
@@ -140,36 +83,16 @@ const closedIcon = L.divIcon({
 });
 
 
-// Schritt 2: Marker hinzufügen und Icons basierend auf dem Status setzen
+//  Marker hinzufügen und Icons basierend auf dem Status setzen
 all_parkhaeuser.forEach(parkhaus => {
     if (parkhaus.breite && parkhaus.laenge) {
         // Schritt 3: Setze das graue Icon als Standard-Status
         let currentIcon = meinPinIcon;
 
-        // // Schritt 4: Wenn das Parkhaus geöffnet ist, ändere das Icon auf grün
-        // if (parkhaus.status === 'offen') {
-        //     currentIcon = openIcon;
-        // }
-        // // Wenn das Parkhaus geschlossen ist, ändere das Icon auf rot
-        // else if (parkhaus.status === 'geschlossen') {
-        //     currentIcon = closedIcon;
-        // }
 
-// Schritt 5: Marker hinzufügen
+//  Marker hinzufügen
 const marker = L.marker([parkhaus.breite, parkhaus.laenge], { icon: currentIcon })
     .addTo(map)
-//     .bindPopup(`
-//     <h2>${parkhaus.name}</h2>
-//     <p class="status">${parkhaus.status}</p>
-//     <p class="adresse">${parkhaus.adresse}</p>
-//     <div class="freiePlaetze">${parkhaus.freie_plaetze}</div>
-//     <div class="gesamtePlaetze">Plätze von ${parkhaus.gesamte_plaetze}</div>
-//     <div class="auslastung">
-//         <div class="auslastung-wert">${parkhaus.auslastung}%</div>
-//         <div class="auslastung-label">Auslastung</div>
-//     </div>
-//     <div class="circle ${parkhaus.status}"></div>
-// `);
 .bindPopup(`
   <h2>${parkhaus.name}</h2>
   <div class="status-wrapper">
@@ -192,20 +115,19 @@ const marker = L.marker([parkhaus.breite, parkhaus.laenge], { icon: currentIcon 
 
 
 
-
                 
-        // Schritt 6: Klick-Event für den Marker, um das Icon zu wechseln
+ // Klick-Event für den Marker, um das Icon zu wechseln
         marker.on('click', () => {
             
 
-            // Überprüfen, ob das aktuelle Parkhaus geöffnet oder geschlossen ist
-            if (parkhaus.status === 'offen') {
-            marker.setIcon(openIcon); // Grün für geöffnet
-            } else if (parkhaus.status === 'geschlossen') {
-            marker.setIcon(closedIcon); // Rot für geschlossen
-            }
+        // Überprüfen, ob das aktuelle Parkhaus geöffnet oder geschlossen ist
+        if (parkhaus.status === 'offen') {
+        marker.setIcon(openIcon); // Grün für geöffnet
+        } else if (parkhaus.status === 'geschlossen') {
+         marker.setIcon(closedIcon); // Rot für geschlossen
+        }
 
-            // Speichere den aktiven Marker
+        // Speichere den aktiven Marker
             activeMarker = marker;
         });
 
@@ -216,6 +138,11 @@ const marker = L.marker([parkhaus.breite, parkhaus.laenge], { icon: currentIcon 
     }
 });
 
+
+
+
+
+
 // Standorticon
 
 const userLocationIcon = L.icon({
@@ -224,6 +151,7 @@ const userLocationIcon = L.icon({
     iconAnchor: [25, 25],    // Punkt auf dem Icon, der den Standort markiert (Mitte unten)
     popupAnchor: [0, -30]    // Wo das Popup erscheinen soll
 });
+
 
 
 
@@ -400,9 +328,11 @@ L.geoJSON(route, {
 }).addTo(map);
 
 
+
+
+
 // Autiocon auf Pfad setzten:
 
-// Autobewergungen sind smoother:
 
 const autoIcon = L.icon({
     iconUrl: 'images/icon_auto_gelb.svg',

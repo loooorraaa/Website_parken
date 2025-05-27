@@ -16,26 +16,6 @@ body{
 
 
 
-/* Hintergrund für die Infos (grün) und grösse der Box*/
-.leaflet-popup-content-wrapper{
-    background-color: rgba(208, 219, 174, 1) !important;
-
-}
-.leaflet-popup-tip {
-	background: rgba(208, 219, 174, 1) !important;
-
-}
-.leaflet-popup-content-wrapper{
-    width: 230px;
-    height: 230px;
-    padding: 10px;
-    border-radius: 10px;
-    line-height: 1.2;  
-}
-
-
-
-
 /* Grösse der Map */
 #map{
     width: 100%;
@@ -45,7 +25,10 @@ body{
     z-index: 1;
 }
 
-/* Titel udn Untertitel stylen */
+
+
+
+/* Titel und Untertitel stylen */
 .titel{
     font-size: 3.3rem;
     font-weight: bold;
@@ -64,7 +47,6 @@ body{
     padding: 10px 0;
     color: rgba(102, 97, 97, 1);
 }
-
 
 
 
@@ -100,7 +82,7 @@ h2{
 }
 
 .circle.offen {
-    background-color: rgba(160, 177, 136, 1); /* Grün */
+    background-color: rgba(160, 177, 136, 1); 
 
 }
 
@@ -116,6 +98,7 @@ h2{
  margin: 0;
  font-size: 12px;
 }
+
 
 
 
@@ -159,12 +142,18 @@ h2{
 
 
 /* Standort-Pop-up */
+
 /* Gesamter Popup-Wrapper */
 .leaflet-popup-content-wrapper {
     background-color: rgba(182, 219, 217, 1) !important; /* Blau */
     color: rgba(102, 97, 97, 1) !important;
     border-radius: 10px;
     position: relative;
+    width: 230px;
+    height: 230px;
+    padding: 10px;
+    border-radius: 10px;
+    line-height: 1.2; 
 }
 
 
