@@ -118,3 +118,33 @@ margin:0;
 }
 
 
+/* Standort-Pop-up */
+/* Gesamter Popup-Wrapper */
+.leaflet-popup-content-wrapper {
+    background-color: rgba(105, 158, 154, 1) !important; /* Blau */
+    color: rgb(0, 0, 0) !important;
+    border-radius: 10px;
+}
+
+/* Popup-Spitze (der kleine Pfeil nach unten) */
+.leaflet-popup-tip {
+    background-color: rgba(105, 158, 154, 1) !important;
+}
+
+
+.standort-popup {
+    background-color: rgba(105, 158, 154, 1);
+    padding: 8px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 24px !important;  
+    text-align: center !important;
+    font-family: 'Bebas Neue', Impact, 'Arial Narrow', sans-serif !important;
+}
+
+.standort-popup .genauigkeit {
+    font-size: 12px;
+    font-weight: normal;
+    display: block;
+    margin-top: 4px;
+}

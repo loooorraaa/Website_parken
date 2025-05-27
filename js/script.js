@@ -210,11 +210,20 @@ map.on('locationfound', function(e) {
     const radius = e.accuracy;
 
     // Marker für aktuellen Standort
-   const userMarker = L.marker(e.latlng, { icon: userLocationIcon }).addTo(map)
-    .bindPopup(`Du bist hier<br>Genauigkeit: ${Math.round(radius)} m`).openPopup();
+    const userMarker = L.marker(e.latlng, { icon: userLocationIcon })
+        .addTo(map)
+        .bindPopup(`
+            <div class="standort-popup">
+                Dein Standort<br>
+                <span class="genauigkeit">Genauigkeit: ${Math.round(radius)} m</span>
+            </div>
+        `);
 
-  
+    // Popup direkt anzeigen
+    userMarker.openPopup();
 });
+
+
 
 
 // Pfade zwischen Parkhäusern: 
