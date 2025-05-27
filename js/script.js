@@ -155,18 +155,43 @@ all_parkhaeuser.forEach(parkhaus => {
         //     currentIcon = closedIcon;
         // }
 
-        // Schritt 5: Marker hinzufügen
-        const marker = L.marker([parkhaus.breite, parkhaus.laenge], { icon: currentIcon })
-            .addTo(map)
-            .bindPopup(`
-                <h2>${parkhaus.name}</h2>
-                <p class="status">${parkhaus.status}</p>
-                <p class="adresse">${parkhaus.adresse}</p>
-                <p class="freiePlaetze">${parkhaus.freie_plaetze} freie Plätze von</p>
-                <p class="gesamtePlaetze">${parkhaus.gesamte_plaetze}</p>
-                <p class="auslastung">${parkhaus.auslastung}% Auslastung</p>
-                <div class="circle ${parkhaus.status}"></div>
-    `); 
+// Schritt 5: Marker hinzufügen
+const marker = L.marker([parkhaus.breite, parkhaus.laenge], { icon: currentIcon })
+    .addTo(map)
+//     .bindPopup(`
+//     <h2>${parkhaus.name}</h2>
+//     <p class="status">${parkhaus.status}</p>
+//     <p class="adresse">${parkhaus.adresse}</p>
+//     <div class="freiePlaetze">${parkhaus.freie_plaetze}</div>
+//     <div class="gesamtePlaetze">Plätze von ${parkhaus.gesamte_plaetze}</div>
+//     <div class="auslastung">
+//         <div class="auslastung-wert">${parkhaus.auslastung}%</div>
+//         <div class="auslastung-label">Auslastung</div>
+//     </div>
+//     <div class="circle ${parkhaus.status}"></div>
+// `);
+.bindPopup(`
+  <h2>${parkhaus.name}</h2>
+  <div class="status-wrapper">
+    <div class="circle ${parkhaus.status}"></div>
+    <p class="status">${parkhaus.status}</p>
+  </div>
+  <p class="adresse">${parkhaus.adresse}</p>
+  <div class="info-row">
+    <div class="linke-seite">
+      <div class="freiePlaetze">${parkhaus.freie_plaetze}</div>
+      <div class="gesamtePlaetze">Plätze von ${parkhaus.gesamte_plaetze}</div>
+    </div>
+    <div class="rechte-seite auslastung">
+      <div class="auslastung-wert">${parkhaus.auslastung}%</div>
+      <div class="auslastung-label">Auslastung</div>
+    </div>
+  </div>
+`);
+
+
+
+
 
                 
         // Schritt 6: Klick-Event für den Marker, um das Icon zu wechseln
