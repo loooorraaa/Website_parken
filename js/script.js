@@ -165,6 +165,7 @@ all_parkhaeuser.forEach(parkhaus => {
                 <p class="freiePlaetze">${parkhaus.freie_plaetze} freie Plätze von</p>
                 <p class="gesamtePlaetze">${parkhaus.gesamte_plaetze}</p>
                 <p class="auslastung">${parkhaus.auslastung}% Auslastung</p>
+                <div class="circle ${parkhaus.status}"></div>
     `); 
 
                 
@@ -202,7 +203,7 @@ const userLocationIcon = L.icon({
 
 
 
-// 🔍 Aktuellen Standort anzeigen
+// Aktuellen Standort anzeigen
 map.locate({ setView: true, maxZoom: 16 });
 
 // 📍 Wenn der Standort gefunden wurde
@@ -218,7 +219,6 @@ map.on('locationfound', function(e) {
                 <span class="genauigkeit">Genauigkeit: ${Math.round(radius)} m</span>
             </div>
         `);
-
     // Popup direkt anzeigen
     userMarker.openPopup();
 });
