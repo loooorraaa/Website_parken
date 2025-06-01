@@ -1,36 +1,73 @@
 # Website_parken_IM2
 
-# IM2 Dokumentation Projektarbeit
-### von Laura Seger
----
-
-## Kurzbeschreibung des Projekts (max. 500 Zeichen)
-Auf dieser Website kann man seinen aktuellen Standort sehen und deren der Parkhäuser in Basel. Beim Klicken auf den Pin erhält man Informationen über das Parkhaus. Als kleine Spielerei sind sie Parkhäuser über einen Pfad miteinander verbunden und ein kleines gelbes Auto fährt seine Runden darauf.
-
-*Beispiel*
-Wenn man beispielsweise anhand des Standorticons, welches immer nach dem Laden der Website aufpoppt, sieht, dass man sich in der Nähe des Unispitals befindet, kann man auf den nächstgelegenen Pin (Parkhaus City) drücken und Informationen zum Parkhaus herauslesen. 
-
-*Parameter*
--Name des Parkhauses
--Status: «offen» oder «zu», dieses wird farblich durch einen grünen oder roten Kreis und dem farblich angepassten Pin unterstützt
--Adresse des Parkhauses
--aktuell freie Plätze des Parkhauses 
--die Gesamtanzahl der Parkplätze des Parkhauses
--Auslastung des Parkhauses in Prozent
-
-*API's*
--Daten der Parkhäuser: data.bs.ch
--Pfad: GeoJson (selbst gezeichnet)
----
-
-## Learnings und Schwierigkeiten (max. 200 Zeichen)
-Meine fertige Website sieht jetzt ganz anders aus als meine UX-Abgabe. Das liegt daran, dass die Map das Herzstück meiner Website ist, und die, deren SS ich für die UX-Abgabe gebraucht habe kostenpflichtig ist. Darum habe ich alle Designs nun auf die neue Map abgestimmt. 
-Was leider nicht geklappt hat, ist das ich den Pop-up verschiedenfarbig einfärben konnte. Ursprünglich wollte ich das Pop-up für den Standorticon blau, für ein geöffnetes Parkhaus grün und für ein geschlossenes Rot. Auch zusammen im Coaching, konnten wir leider die Pop-ups nur jeweils in eine Farbe färben. Darum haben nun alle die Grundfarbe blau und ein eingefärbter Kreis beim Parkaus-Pop-up zeigt schnell an, ob dieses geöffnet ist oder nicht.
-Was mich aber umso mehr überrascht hat, ist, das Einzeichnen des Pfades mit GeoJson so gut geklappt hat. Ich konnte den Pfad extern auf GeoJson einzeichnen und dessen Koordinaten mithilfe von ChatGPT in meine Map einfügen. Leider sind die Standorte der Pins nicht immer bei jeder Grösse der Karte perfekt auf dem Pfad, aber im Coaching waren alle erstaunt, dass es so gut geklappt hatte.
+# IM2 Dokumentation Projektarbeit  
+**von Laura Seger**
 
 ---
-## Benutzte Ressourcen und Prompts 
-Als externe Hilfe hatte ich das Coaching-Team vor Ort. Dann Thierry, ein Mitstudent, sowie wie schon eben erwähnt GeoJson, dann auch Leaflet für die Map und auch ChatGPT.
-Beispielprompt ChatGPT: (nicht mein bestes Deutsch)
-ich möchte einen Pfad an diesen Punkten entlang von GeoJson in meine Leaflet Map machen.... hier ist das GeoJson: { "type": "FeatureCollection", "features": [ { "type": "Feature", "properties": {}, "geometry": { "coordinates": [ [ 7.589536720675341, 47.545461292230016 ],……..
+
+## Kurzbeschreibung des Projekts  
+Auf dieser Website kann man seinen aktuellen Standort sehen sowie die Standorte der Parkhäuser in Basel.  
+Beim Klicken auf einen Pin erhält man Informationen über das Parkhaus.  
+
+Als kleine Spielerei sind die Parkhäuser über einen Pfad miteinander verbunden,  
+und ein kleines gelbes Auto fährt seine Runden darauf.
+
 ---
+
+## Beispiel  
+Wenn man beispielsweise anhand des Standort-Icons, welches nach dem Laden der Website erscheint, sieht,  
+dass man sich in der Nähe des Unispitals befindet,  
+kann man auf den nächstgelegenen Pin (Parkhaus City) klicken und Informationen dazu erhalten.
+
+---
+
+## Parameter  
+
+- **Name des Parkhauses**  
+- **Status**: *„offen“* oder *„geschlossen“*, wird farblich durch einen grünen oder roten Kreis und einen entsprechenden Pin dargestellt  
+- **Adresse** des Parkhauses  
+- **Aktuell freie Plätze**  
+- **Gesamtanzahl der Parkplätze**  
+- **Auslastung** des Parkhauses in Prozent
+
+---
+
+## APIs  
+- **Daten der Parkhäuser**: [data.bs.ch](https://data.bs.ch)  
+- **Pfad (GeoJSON)**: *selbst gezeichnet*
+
+---
+
+## Learnings und Schwierigkeiten  
+
+Meine fertige Website sieht jetzt ganz anders aus als meine ursprüngliche UX-Abgabe.  
+Das liegt daran, dass die Map das Herzstück meiner Website ist –  
+und die Karte, deren Screenshot ich für die UX-Abgabe verwendet habe, war leider kostenpflichtig.  
+
+Darum habe ich mein Design komplett auf die neue, frei verfügbare Map angepasst.  
+
+Was leider **nicht geklappt** hat: Ich wollte die Pop-ups farblich anpassen:  
+- Standort: blau  
+- Geöffnetes Parkhaus: grün  
+- Geschlossenes Parkhaus: rot  
+
+Auch zusammen im Coaching-Team konnten wir leider die Pop-ups nur **einheitlich** einfärben.  
+Jetzt sind alle Pop-ups blau – aber ein farbiger Kreis im Parkhaus-Popup zeigt schnell an,  
+ob es geöffnet ist oder nicht.
+
+**Positiv überrascht** war ich davon, wie gut das Einzeichnen des Pfades mit GeoJSON geklappt hat.  
+Ich konnte den Pfad extern mit GeoJSON zeichnen und mithilfe von ChatGPT  
+die Koordinaten erfolgreich in meine Leaflet-Map integrieren.  
+
+Einziger Nachteil: Die Pins liegen je nach Kartengröße nicht immer exakt auf dem Pfad.  
+Aber im Coaching waren alle erstaunt, wie gut das insgesamt funktioniert hat.
+
+---
+
+## Benutzte Ressourcen und Prompts  
+
+- Coaching-Team vor Ort  
+- Thierry (Mitstudent)  
+- [geojson.io](https://geojson.io)  
+- [Leaflet](https://leafletjs.com) für die Map  
+- ChatGPT
