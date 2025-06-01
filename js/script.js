@@ -70,7 +70,7 @@ const meinPinIcon = L.divIcon({
 // Marker geöffnet
 const openIcon = L.divIcon({
     className: 'custom-icon',
-    html: `<img src="images/pin_grün.svg" width="30" height="30" />`, // grünes SVG für geöffnet
+    html: `<img src="images/pin_gruen.svg" width="30" height="30" />`, // grünes SVG für geöffnet
     iconSize: [20, 20],
     iconAnchor: [10, 41],  
     popupAnchor: [0, -40]  
