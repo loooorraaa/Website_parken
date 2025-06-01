@@ -52,7 +52,10 @@ const humanitarianTileLayer = L.tileLayer('https://{s}.tile.openstreetmap.fr/hot
 
 
 
-// // Standartmarker mit meinen eigenen Markern ersetzten: 
+
+
+// Standartmarker mit meinen eigenen Markern ersetzten: 
+
 // // Benutzerdefiniertes Icon für Marker
 const meinPinIcon = L.divIcon({
     className: 'custom-icon',
@@ -143,6 +146,7 @@ const marker = L.marker([parkhaus.breite, parkhaus.laenge], { icon: currentIcon 
 
 
 
+
 // Standorticon
 
 const userLocationIcon = L.icon({
@@ -175,6 +179,7 @@ map.on('locationfound', function(e) {
     // Popup direkt anzeigen
     userMarker.openPopup();
 });
+
 
 
 
@@ -331,8 +336,8 @@ L.geoJSON(route, {
 
 
 
-// Autiocon auf Pfad setzten:
 
+// Autiocon auf Pfad setzten:
 
 const autoIcon = L.icon({
     iconUrl: 'images/icon_auto_gelb.svg',
@@ -390,7 +395,9 @@ requestAnimationFrame(animate);
 
 
 
+
 // Auto während fahren drehen: 
+
 function updateAutoRotation() {
     if (currentIndex < routeCoords.length - 1) {
         const start = routeCoords[currentIndex];
@@ -402,7 +409,9 @@ function updateAutoRotation() {
 
         autoMarker.setRotationAngle(angle);
     }
+
 }
+
 function animateWithRotation() {
     const start = routeCoords[currentIndex];
     const end = routeCoords[nextIndex];

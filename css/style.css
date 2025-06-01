@@ -1,5 +1,5 @@
 
-/* macht man immer, wichtig, weil Webiste auf jedem Broweser imme rgleich aussieht */
+/* macht man immer, wichtig, weil Webiste auf jedem Broweser immer gleich aussieht */
 * {
     margin: 0;
     padding: 0;
@@ -17,6 +17,7 @@ body{
 
 
 /* Grösse der Map */
+
 #map{
     width: 100%;
     height: 100vh;
@@ -29,6 +30,7 @@ body{
 
 
 /* Titel und Untertitel stylen */
+
 .titel{
     font-size: 3.3rem;
     font-weight: bold;
